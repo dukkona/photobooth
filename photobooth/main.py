@@ -39,7 +39,7 @@ from .Threading import Communicator, Workers
 from .worker import Worker
 
 # Globally install gettext for I18N
-el = gettext.translation('photobooth', localedir='locale', languages=['hu'])
+el = gettext.translation('photobooth', localedir='photobooth/locale', languages=['hu'])
 el.install()
 # gettext.install('photobooth', 'photobooth/locale')
 
