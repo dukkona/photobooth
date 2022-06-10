@@ -9,7 +9,7 @@ msgstr ""
 
 #: photobooth/gui/Qt5Gui/Frames.py:50
 msgid "Start photobooth"
-msgstr "Start photobooth"
+msgstr "Photobooth indítása"
 
 #: photobooth/gui/Qt5Gui/Frames.py:53
 msgid "Set date/time"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: photobooth/gui/Qt5Gui/Frames.py:88
 msgid "Button!"
-msgstr "Start"
+msgstr "Érints meg / Touch me"
 
 #: photobooth/gui/Qt5Gui/Frames.py:111
 msgid "Get ready!"
@@ -53,7 +53,7 @@ msgstr "{} / {}..."
 
 #: photobooth/gui/Qt5Gui/Frames.py:342
 msgid "Start over"
-msgstr "Újrakezdés"
+msgstr "Start over / Újrakezdés"
 
 #: photobooth/gui/Qt5Gui/Frames.py:351
 msgid "Happy?"
