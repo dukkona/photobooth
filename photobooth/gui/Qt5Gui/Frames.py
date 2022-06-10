@@ -91,12 +91,12 @@ class IdleMessage(QtWidgets.QFrame):
 
     def initFrame(self, trigger_action):
 
-        lbl = QtWidgets.QLabel(self._message_label)
+        # lbl = QtWidgets.QLabel(self._message_label)
         btn = QtWidgets.QPushButton(self._message_button)
         btn.clicked.connect(trigger_action)
 
         lay = QtWidgets.QVBoxLayout()
-        lay.addWidget(lbl)
+        # lay.addWidget(lbl)
         lay.addWidget(btn)
         self.setLayout(lay)
 
