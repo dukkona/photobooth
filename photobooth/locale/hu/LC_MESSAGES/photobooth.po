@@ -33,7 +33,7 @@ msgstr ""
 
 #: photobooth/gui/Qt5Gui/Frames.py:88
 msgid "Button!"
-msgstr "Érints meg / Touch me"
+msgstr "Érints meg"
 
 #: photobooth/gui/Qt5Gui/Frames.py:111
 msgid "Get ready!"
