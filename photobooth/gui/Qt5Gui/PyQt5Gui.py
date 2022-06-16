@@ -161,7 +161,7 @@ class PyQt5Gui(GuiSkeleton):
 
         self._disableTrigger()
         self._enableEscape()
-        self._setWidget(Frames.WaitMessage(_('Starting the photobooth...')))
+        self._setWidget(Frames.WaitMessage(_('Photobooth indítása...')))
         if self._cfg.getBool('Gui', 'hide_cursor'):
             QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.BlankCursor)
 
