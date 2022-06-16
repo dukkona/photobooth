@@ -48,13 +48,19 @@ print(s.cookies)
 
 payload={}
 
-files=[('file',('test.png', open('/home/ddm/photobooth/meghivo.PNG','rb'), 'image/png'))]
+# files=[('file',('test.png', open('/home/ddm/photobooth/meghivo.PNG','rb'), 'image/png'))]
 
-img =  open('/home/ddm/photobooth/meghivo.PNG','rb')
+# img =  open('/home/ddm/photobooth/meghivo.PNG','rb')
 
 # response = s.request("POST", "https://www.dukkon.com/wedding/upload", headers=headers, data=img, headers={"Content-Type": "image/png"})
 
-files = {'file': open('/home/ddm/photobooth/meghivo.PNG', 'rb')}
-response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", files=files)
+# files = {'file': open('/home/ddm/photobooth/meghivo.PNG', 'rb')}
+# response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", files=files)
+im = Image.open("/home/ddm/photobooth/logo_szines_datummal.jpg") 
+response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", data=im.getbuffer())
+
+
+
+
 print(response.content)
 print(response.status_code)

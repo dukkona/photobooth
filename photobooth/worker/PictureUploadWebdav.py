@@ -31,19 +31,15 @@ class PictureUploadWebdav(WorkerTask):
 
         super().__init__()
 
-        self._baseurl = config.get('UploadWebdav', 'url')
-        if config.getBool('UploadWebdav', 'use_auth'):
-            self._auth = (config.get('UploadWebdav', 'user'),
-                          config.get('UploadWebdav', 'password'))
-        else:
-            self._auth = None
-
     def do(self, picture, filename):
 
-        url = self._baseurl + '/' + Path(filename).name
-        logging.info('Uploading picture as %s', url)
+        s = requests.session()
+        url_login = "https://www.dukkon.com/setpin"
+        headers={"Content-Type":"text", "pin": "1994"}
+        s.get(url_login, headers=headers)
+        logging.info('Uploading picture as %s', filename)
+        response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", data=picture.getbuffer())
 
-        r = requests.put(url, data=picture.getbuffer(), auth=self._auth)
-        if r.status_code in range(200, 300):
+        if response.status_code in range(200, 300):
             logging.warn(('PictureUploadWebdav: Upload failed with '
-                          'status code {}').format(r.status_code))
+                          'status code {}').format(response.status_code))
