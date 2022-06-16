@@ -19,7 +19,7 @@
 
 import logging
 import requests
-
+import os
 from pathlib import Path
 
 from .WorkerTask import WorkerTask
@@ -38,7 +38,8 @@ class PictureUploadWebdav(WorkerTask):
         headers={"Content-Type":"text", "pin": "1994"}
         s.get(url_login, headers=headers)
         logging.info('Uploading picture as %s', filename)
-        response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", data=picture.getbuffer())
+        files = {'file': open(os.path.abspath(filename),'rb')}
+        response = s.request("POST", "https://www.dukkon.com/wedding/upload_pb", files=files)
 
         if response.status_code in range(200, 300):
             logging.warn(('PictureUploadWebdav: Upload failed with '
